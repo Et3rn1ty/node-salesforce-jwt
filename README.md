@@ -35,9 +35,10 @@ var jwtflow = require('salesforce-jwt');
 
 var clientId = '3MVG9A2kN3Bn17hvVNDOE5FX8c9hS...30dgSSfyGi1FS09Zg'; // This is the connected app consumerKey
 var privateKey = require('fs').readFileSync('./privateKey.key', 'utf8');
-var instanceUrl = 'https://na15.salesforce.com'
+var instanceUrl = 'https://na15.salesforce.com';
+var sandbox = false;
 
-jwtflow.getToken(clientId, privateKey, 'user@toImpersonate.com', function(err, accessToken) {
+jwtflow.getToken(clientId, privateKey, 'user@toImpersonate.com', sandbox, function(err, accessToken) {
 	// err
 
 	var sfConnection = new jsforce.Connection();
