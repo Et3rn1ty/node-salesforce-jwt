@@ -2,6 +2,10 @@ Salesforce Auth 2.0 JWT Bearer Token Flow Implementation
 =============
 salesforce-jwt is an minimal implementation of the [OAuth 2.0 JWT Bearer Token Flow](https://help.salesforce.com/HTViewHelpDoc?id=remoteaccess_oauth_jwt_flow.htm&language=en_US) that allows you to impersonate users on SalesForce.
 
+Create key in osx terminal: 
+ - openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout PrivateKey.key
+ - openssl x509 -req -in CSR.csr -signkey privateKey.key -out CSR.crt
+
 It is compatible with [jsforce](https://github.com/jsforce/jsforce).
 
 ## Installation
